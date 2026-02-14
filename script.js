@@ -6,6 +6,7 @@ const btnContainer = document.getElementById('btnContainer');
 
 let noCount = 0;
 let lastHandledTime = 0; // Debounce: prevent double-counting from hover+click
+let movedToBody = false; // Track if No button has been moved to body
 
 // Text mapped to each "No" attempt
 const noTexts = [
@@ -21,6 +22,9 @@ const memes = [
     'images/no3a.jpg',   // No #3
     'images/no4.jpg'     // No #4
 ];
+
+// Yes button grows BIG with each No (classic meme pattern)
+const yesSizes = [1.3, 1.7, 2.2, 2.8];
 
 function handleNo() {
     // Debounce: prevent double-counting within 300ms (hover + click)
@@ -42,9 +46,9 @@ function handleNo() {
         memeContainer.appendChild(img);
     }
 
-    // 2. Update Yes button size (20% growth per step)
-    const currentSize = 1 + (noCount * 0.2);
-    yesBtn.style.transform = `scale(${currentSize})`;
+    // 2. Yes button grows DRAMATICALLY with each No
+    const scale = yesSizes[noCount - 1] || 2.8;
+    yesBtn.style.transform = `scale(${scale})`;
 
     // 3. Update No button text or hide it
     if (noCount < 4) {
@@ -58,8 +62,8 @@ function handleNo() {
         noBtn.style.display = 'none';
         mainQuestion.innerText = "I'll wait... ⏳";
 
-        // Make Yes button HUGE
-        yesBtn.style.transform = 'scale(1.6)';
+        // Make Yes button MEGA
+        yesBtn.style.transform = 'scale(2.8)';
     }
 }
 
@@ -67,7 +71,14 @@ function teleportButton() {
     // If button is hidden, don't teleport
     if (noBtn.style.display === 'none') return;
 
-    // window.innerHeight/Width = the VISIBLE viewport only (not scrollable area)
+    // FIRST teleport: move button from card to body
+    // This is needed because .card has backdrop-filter which breaks position:fixed
+    if (!movedToBody) {
+        document.body.appendChild(noBtn);
+        movedToBody = true;
+    }
+
+    // window.innerHeight/Width = the VISIBLE viewport only
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
@@ -94,6 +105,7 @@ function teleportButton() {
     noBtn.style.top = `${Math.min(randomY, vh - btnHeight - 10)}px`;
     noBtn.style.margin = '0';
     noBtn.style.transform = '';
+    noBtn.style.zIndex = '100';
     noBtn.classList.add('teleported');
 }
 

@@ -181,16 +181,10 @@ button {
 }
 
 .btn-no {
-  position: fixed;
-  /* Start centered, slightly right of center */
-  left: 50%;
-  top: 50%;
-  transform: translate(20px, 60px);
   background: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 100;
 }
 
 /* Shake Animation for No Button */
