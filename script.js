@@ -70,7 +70,11 @@ function handleNo() {
     } else {
         // 4th time: Hide No button & change main text
         noBtn.style.display = 'none';
-        mainQuestion.innerText = "I'll wait... ⏳";
+        // USE SVG ICON FOR HOURGLASS
+        mainQuestion.innerHTML = `<span class="text-gradient">I'll wait...</span> 
+        <svg class="icon-hourglass" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffaa5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+        </svg>`;
 
         // Make Yes button MEGA
         yesBtn.style.transform = 'scale(2.8)';
@@ -233,7 +237,11 @@ yesBtn.addEventListener('click', () => {
     triggerConfetti();
 
     // 2. Change content
-    mainQuestion.innerHTML = "Yay! 🥰💕";
+    // USE SVG ICONS FOR HEARTS
+    mainQuestion.innerHTML = `<span class="text-gradient">Yay!</span> 
+    <svg class="icon-heart-filled" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#ff4d6d" stroke="#ff4d6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+    </svg>`;
 
     // 3. Show Yes meme
     memeContainer.innerHTML = '';

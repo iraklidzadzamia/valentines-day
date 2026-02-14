@@ -102,13 +102,42 @@ body {
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  /* Wrap on small screens if needed */
+}
+
+.text-gradient {
   background: linear-gradient(to right, #ffffff, #ffccd5);
   /* Brighter for contrast */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-  /* Better shadow/glow */
+}
+
+.icon-heart,
+.icon-hourglass,
+.icon-heart-filled {
+  filter: drop-shadow(0 2px 4px rgba(255, 77, 109, 0.5));
+  animation: pulse-icon 2s infinite ease-in-out;
+}
+
+@keyframes pulse-icon {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Meme Container */
