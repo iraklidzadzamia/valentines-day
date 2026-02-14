@@ -102,11 +102,13 @@ body {
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  background: linear-gradient(to right, #ffffff, #ffccd5);
+  /* Brighter for contrast */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  /* Better shadow/glow */
 }
 
 /* Meme Container */
