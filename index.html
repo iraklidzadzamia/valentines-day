@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Will you be my Valentine? 💘</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg">
+        <div class="heart" style="left: 10%; animation-delay: 0s">❤️</div>
+        <div class="heart" style="left: 20%; animation-delay: 2s; font-size: 15px">💖</div>
+        <div class="heart" style="left: 30%; animation-delay: 4s">❤️</div>
+        <div class="heart" style="left: 40%; animation-delay: 1s; font-size: 20px">💕</div>
+        <div class="heart" style="left: 50%; animation-delay: 3s">❤️</div>
+        <div class="heart" style="left: 60%; animation-delay: 5s; font-size: 18px">💞</div>
+        <div class="heart" style="left: 70%; animation-delay: 2.5s">❤️</div>
+        <div class="heart" style="left: 80%; animation-delay: 4.5s; font-size: 22px">💖</div>
+        <div class="heart" style="left: 90%; animation-delay: 1.5s">❤️</div>
+        <div class="heart" style="left: 15%; animation-delay: 6s; font-size: 14px">💕</div>
+        <div class="heart" style="left: 25%; animation-delay: 3.5s">❤️</div>
+        <div class="heart" style="left: 35%; animation-delay: 0.5s; font-size: 16px">💞</div>
+        <div class="heart" style="left: 45%; animation-delay: 5.5s">❤️</div>
+        <div class="heart" style="left: 55%; animation-delay: 2.2s; font-size: 20px">💖</div>
+        <div class="heart" style="left: 65%; animation-delay: 4.2s">❤️</div>
+        <div class="heart" style="left: 75%; animation-delay: 1.2s; font-size: 18px">💕</div>
+        <div class="heart" style="left: 85%; animation-delay: 3.8s">❤️</div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+        <h1 class="question" id="mainQuestion">Will you be my Valentine? 💘</h1>
+
+        <!-- Meme Display Area -->
+        <div class="meme-container" id="memeContainer">
+            <!-- Memes will appear here dynamically -->
+        </div>
+
+        <!-- Yes Button stays in card -->
+        <div class="buttons" id="btnContainer">
+            <button class="btn-yes" id="yesBtn">Yes 💕</button>
+        </div>
+    </div>
+
+    <!-- No Button lives OUTSIDE the card so position:fixed works relative to viewport -->
+    <button class="btn-no" id="noBtn">No 😐</button>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
