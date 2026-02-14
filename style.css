@@ -125,6 +125,10 @@ h1 {
 .meme-img {
   max-width: 100%;
   width: 250px;
+  max-height: 300px;
+  /* Constrain height for mobile */
+  object-fit: contain;
+  /* Ensure full meme is visible */
   border-radius: 16px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
